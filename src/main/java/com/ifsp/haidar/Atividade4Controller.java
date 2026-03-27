@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Atividade4Controller {
-    @GetMapping("/soma")
-    public String somaForm() {
-        return "somaForm.html";
+    @GetMapping("/imc")
+    public String calcularIMC() {
+        return "formularioIMC.html";
     }
 
-    @PostMapping("/resultado")
-    public String somar(@RequestParam int primeiroNumero, @RequestParam int segundoNumero, Model model) {
-        int total = primeiroNumero + segundoNumero;
-        model.addAttribute("total", total);
-        return "resultado.html";
+    @PostMapping("/resultadoIMC")
+    public String resultadoIMC(@RequestParam int peso, @RequestParam double altura, Model model) {
+        double alturaMetros = altura / 100;
+        double imc = peso / (alturaMetros * alturaMetros);
+        model.addAttribute("imc", imc);
+        return "resultadoIMC.html";
     }
 }

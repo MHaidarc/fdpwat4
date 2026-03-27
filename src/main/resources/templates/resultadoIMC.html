@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+    <p th:if="${imc < 18.5}">Abaixo do peso</p>
+    <p th:if="${imc >= 18.5 && imc < 25}">Peso normal</p>
+    <p th:if="${imc >= 25 && imc < 30}">Sobrepeso</p>
+    <p th:if="${imc >= 30 && imc < 35}">Obesidade grau 1</p>
+    <p th:if="${imc >= 35 && imc < 40}">Obesidade grau 2</p>
+    <p th:if="${imc >= 40}">Obesidade grau 3</p>
+</body>
+</html>
