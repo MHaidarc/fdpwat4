@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+</head>
+<body>
+    <form th:method="POST" th:action="@{/cadastrarProduto}">
+        <label for="titulo">Título do produto: </label>
+        <input type="text" th:name="titulo">
+        <br>
+        <label for="descricao">Descrição: </label>
+        <input type="text" th:name="descricao">
+        <br>
+        <label for="preco">Preço: R$</label>
+        <input type="text" th:name="preco">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

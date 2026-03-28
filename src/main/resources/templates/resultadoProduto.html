@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+        <table>
+        <tr>
+            <th>Titulo do produto</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>[[${produto.name}]]</td>
+            <td>[[${produto.description}]]</td>
+            <td>R$[[${produto.price}]]</td>
+        </tr>
+    </table>
+</body>
+</html>

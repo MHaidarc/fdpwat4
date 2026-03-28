@@ -68,4 +68,18 @@ public class Atividade4Controller {
         model.addAttribute("resul", resul);
         return "resultadoCalculadora.html";
     }
+    
+    @GetMapping("/produto")
+    public String produto() {
+        return "formularioProduto.html";
+    }
+
+    @PostMapping("/cadastrarProduto")
+    public String cadastrarProduto(Model model, @RequestParam String titulo, @RequestParam String descricao, @RequestParam String preco) {
+        Produto produto = new Produto(titulo, descricao, Double.valueOf(preco));
+
+        model.addAttribute("produto", produto);
+
+        return "resultadoProduto.html";
+    }
 }
