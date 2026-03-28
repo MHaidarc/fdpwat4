@@ -35,4 +35,16 @@ public class Atividade4Controller {
         model.addAttribute("valorParcela", valorParcela);
         return "resultadoEmprestimo.html";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "formularioLogin.html";
+    }
+
+    @PostMapping("/resultadoLogin")
+    public String resultadoEmprestimo(@RequestParam String nome, @RequestParam String senha, Model model) {
+        boolean validade = nome.equals("admin") && senha.equals("admin");
+        model.addAttribute("validade", validade);
+        return "resultadoLogin.html";
+    }
 }
