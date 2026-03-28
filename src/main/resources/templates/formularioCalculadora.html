@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+     <form th:method="POST" th:action="@{/resultadoCalculadora}">
+        <input type="number" th:name="numero1">
+        <select id="operador" name="operadorid">
+            <option value="soma">+</option>
+            <option value="sub">-</option>
+            <option value="mul">*</option>
+            <option value="div">/</option>
+        </select>
+        <input type="number" th:name="numero2">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

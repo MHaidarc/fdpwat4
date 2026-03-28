@@ -47,4 +47,25 @@ public class Atividade4Controller {
         model.addAttribute("validade", validade);
         return "resultadoLogin.html";
     }
+
+    @GetMapping("/calculadora")
+    public String calculadora() {
+        return "formularioCalculadora.html";
+    }
+
+    @PostMapping("/resultadoCalculadora")
+    public String resultadoCalculadora (Model model, @RequestParam("operadorid") String operadorId, @RequestParam double numero1, @RequestParam double numero2) {
+        double resul;
+        if (operadorId.equals("soma")){
+          resul = numero1 + numero2;
+        } else if(operadorId.equals("sub")){
+          resul = numero1 - numero2;
+        } else if(operadorId.equals("mul")){
+          resul = numero1 * numero2;
+        } else{
+          resul = numero1/numero2;
+        }
+        model.addAttribute("resul", resul);
+        return "resultadoCalculadora.html";
+    }
 }
